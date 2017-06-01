@@ -26,7 +26,7 @@ The `GETVARIABLES` command requests the serialized scope of the current state fr
 
 ### Client Responses
 
-Each succesful response from the client is prefixed by the `OK` command followed by additional values dependent on the original command.
+Each succesful response from the client is prefixed by the `OK` command followed by additional values dependent on the original command. These values should be separated by semicolons `;`.
 
 #### To `INIT`  
 
@@ -34,7 +34,7 @@ Upon receiving the `INIT` command, the client should respond with the debug proj
 
 ##### _Example:_
 
-`OK,03708201,/lib/debug/Insecticide.lua`
+`OK;03708201;/lib/debug/Insecticide.lua`
 
 #### To `STEPIN`
 
@@ -47,7 +47,12 @@ After successfully stepping into code, the client returns no additional values t
 #### To `GETSTACK`
 
 WIP
+##### _Example:_
+
+`OK,main.lua:love.load:2;src/other.lua:loadAssets:24`
 
 #### To `GETVARIABLES`
 
 WIP
+
+##### _Example:_
